@@ -1,0 +1,274 @@
+//Primary Colors
+$Purple: hsl(259, 100%, 65%);
+$Light-red: hsl(0, 100%, 67%);
+
+//Neutral Colors
+$White: hsl(0, 0%, 100%);
+$Off-white: hsl(0, 0%, 94%);
+$Light-grey: hsl(0, 0%, 86%);
+$Smokey-grey: hsl(0, 1%, 44%);
+$Off-black: hsl(0, 0%, 8%);
+
+//Typography
+$inputs-font-size: 32px;
+$font-family: 'Poppins', sans-serif;
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $Light-grey;
+    font-family: $font-family;
+}
+
+main{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 960px;
+}
+
+.app{
+    padding: 56px;
+    background-color: $White;
+    border-radius: 24px 24px 200px 24px;
+    width: 840px;
+    height: 651px;
+}
+
+form{
+    display: flex;
+    gap: 32px;
+    height: 101px;
+
+    &>div{
+        width: 160px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+
+        label{
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: 0.25em;
+            color: $Smokey-grey;
+
+            &.red-label{
+                color: $Light-red;
+            }
+        }
+
+        input{
+            display: block;
+            width: 100%;
+            height: 72px;
+            padding: 12px 24px;
+            border: 1px solid $Light-grey;
+            border-radius: 8px;
+            color: $Off-black;
+            font-weight: 700;
+            font-size: $inputs-font-size;
+            line-height: 48px;
+            letter-spacing: 0.01em;
+
+            &.red-input{
+                border-color: $Light-red;
+            }
+            
+            &::placeholder{
+                transform: translateY(6px);
+                color: $Off-black;
+                line-height: 48px;
+                font-weight: 700;
+                font-size: $inputs-font-size;
+                letter-spacing: 0.01em;
+                opacity: 0.5;
+            }
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button{
+                appearance: none;
+            }
+        }
+
+        .error{
+            color: $Light-red;
+            font-family: $font-family;
+            font-size: 14px;
+            font-style: italic;
+            position: absolute;
+            left: 0;
+            bottom: -25px;
+        }
+    }
+}
+
+.age-btn{
+    display: flex;
+    justify-content: flex-end;
+    height: 96px;
+    position: relative;
+
+    button{
+        background-color: $Purple;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 96px;
+        height: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+        border: none;
+        cursor: pointer;
+        transition: 0.5s;
+
+        img{
+            display: block;
+            object-fit:cover;
+            width: 50%;
+            height: 50%;
+        }
+
+        &:hover{
+            background-color: $Off-black;
+        }
+    }
+
+    .line{
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: calc(100% - 96px);
+        height: 1px;
+        background-color: $Light-grey;
+    }
+}
+
+.result{
+    height: 342px;
+
+    p{
+        display: flex;
+        height: 114px;
+        align-items: center;
+        font-style: italic;
+        font-weight: 800;
+        font-size: 104px;
+        line-height: 114px;
+        letter-spacing: -0.02em;
+        color: $Off-black;
+        gap: 8px;
+
+        span{
+            display: block;
+            min-width: 138px;
+            height: 100%;
+            color: $Purple;
+        }
+    }
+}
+
+/**********************
+** Mobile and Tablet **
+**********************/ 
+@media(max-width:870px){
+    main{
+        height: 812px;
+        display: block;
+        padding-top: 88px;
+    }
+
+    .app{
+        height: 494px;
+        min-width: 343px;
+        width: 91.47%;
+        margin: auto;
+        padding: 48px 24px;
+        border-radius: 24px 24px 100px 24px;
+    }
+
+    form{
+        gap: 16px;
+        height: 76px;
+        justify-content: space-around;
+
+        &>div{
+            width: 87.7px;
+
+            label{
+                font-size: 12px;
+                letter-spacing: 3px;
+            }
+
+            input{
+                height: 54px;
+                padding: 12px 16px;
+                font-size: 20px;
+                letter-spacing: 0.2px;
+
+                &::placeholder{
+                    font-size: 20px;
+                    transform: translateY(0);
+                }
+            }
+
+            .error{
+                font-size: 12px;
+                bottom: -40px;
+            }
+        }
+    }
+
+    .age-btn{
+        justify-content: center;
+        height: 64px;
+        margin-top: 50px;
+        margin-bottom: 32px;
+
+        button{
+            width: 64px;
+            position: relative;
+            z-index: 9;
+        }
+
+        .line{
+            width: 100%;
+        }
+    }
+
+    .result{
+        height: 186px;
+
+        p{
+            justify-content: space-between;
+            max-width: 350px;
+            margin: auto;
+            height: 62px;
+            font-size: 56px;
+            line-height: 110%;
+            letter-spacing: -1.12px;
+
+            span{
+                min-width: 70px;
+                font-size: 48px;
+            }
+        }
+    }
+}
+
+@media(max-width:500px){
+    .result{
+        p{
+            margin: none;
+        }
+    }
+}

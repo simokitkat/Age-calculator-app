@@ -28,7 +28,7 @@ Users should be able to:
   - The date is invalid e.g. 31/04/1991 (there are 30 days in April)
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
-- **Bonus**: See the age numbers animate to their final number when the form is submitted
+- **Bonus (to be done in the next release of the app)**: See the age numbers animate to their final number when the form is submitted
 
 ### Screenshot
 
@@ -37,7 +37,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github Repository](https://github.com/simokitkat/Age-calculator-app)
-- Live Site URL: [Frontend Mentor | Age calculator app](https://your-live-site-url.com)
+- Live Site URL: [Frontend Mentor | Age calculator app](https://age-calculator-app-frontend-mentor.netlify.app)
 
 ## My process
 
